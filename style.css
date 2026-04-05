@@ -1,31 +1,63 @@
+:root {
+    --bg-color: #f0f0f0;
+    --container-bg: #fff;
+    --text-color: #333;
+    --button-bg: #4CAF50;
+    --button-text: white;
+    --number-bg: #f0f0f0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --button-bg: #388e3c;
+    --number-bg: #333;
+    --shadow: rgba(255, 255, 255, 0.05);
+}
+
 body {
     font-family: sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--container-bg);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--shadow);
     text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 h1 {
     margin-top: 0;
 }
 
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-bottom: 20px;
+}
+
+#theme-toggle {
+    background-color: #555;
 }
 
 #numbers {
@@ -37,7 +69,7 @@ button {
 .number {
     width: 50px;
     height: 50px;
-    background-color: #f0f0f0;
+    background-color: var(--number-bg);
     border-radius: 50%;
     margin: 5px;
     display: flex;
@@ -45,4 +77,5 @@ button {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
