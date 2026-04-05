@@ -23,6 +23,8 @@ const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
     document.body.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+} else {
+    themeToggle.textContent = 'Dark Mode';
 }
 
 themeToggle.addEventListener('click', () => {
